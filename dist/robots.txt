@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://asirbadconsultancy.com/sitemap.xml
