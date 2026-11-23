@@ -86,14 +86,17 @@ export default function About({ onNavigate }) {
             {/* Right Visual (5 cols) */}
             <div className="lg:col-span-5">
               <div className="rounded-xs overflow-hidden border border-[#D8D6CE] shadow-lg bg-[#F8F6F0]">
-                <img
-                  src="/images/about-consultancy.webp"
-                  alt="Asirbad Consultancy office principles and advisory ledger"
-                  width={1200}
-                  height={800}
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
+                <picture>
+                  <source srcSet="/images/image.webp" type="image/webp" />
+                  <img
+                    src="/images/image.png"
+                    alt={`Portrait of ${BUSINESS_INFO.owner.name}, Founder and Consultant at Asirbad Consultancy`}
+                    width={1166}
+                    height={1349}
+                    loading="lazy"
+                    className="w-full h-auto object-cover hover:scale-102 transition-transform duration-500"
+                  />
+                </picture>
 
                 <div className="p-5 bg-[#FFFFFF] border-t border-[#E9E8E3]">
                   <div className="text-xs font-semibold text-[#0B1D30] uppercase tracking-wider">
@@ -104,6 +107,15 @@ export default function About({ onNavigate }) {
                   </div>
                   <div className="text-xs text-[#8F7441] font-mono mt-2">
                     GSTIN: {BUSINESS_INFO.compliance.gstin}
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-[#E9E8E3]">
+                    <button
+                      onClick={() => onNavigate('gallery')}
+                      className="text-xs font-semibold text-[#0B1D30] hover:text-[#B69A64] transition-colors flex items-center gap-1.5 cursor-pointer"
+                    >
+                      <span>View Office Premises &amp; Gallery</span>
+                      <span className="text-sm">&rarr;</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -127,16 +139,17 @@ export default function About({ onNavigate }) {
 
           <div className="max-w-4xl mx-auto mt-12 bg-[#FFFFFF] rounded-xs border border-[#D8D6CE] shadow-md overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
-              {/* Consultant Placeholder (5 cols) */}
+              {/* Consultant Portrait (5 cols) */}
               <div className="md:col-span-5 bg-[#0B1D30] p-6 sm:p-8 flex flex-col justify-between items-center text-center">
                 <div className="w-full">
-                  <div className="relative mx-auto max-w-[240px] rounded-xs overflow-hidden border-2 border-[#B69A64]/50 shadow-md">
+                  <div className="relative mx-auto max-w-[260px] rounded-xs overflow-hidden border-2 border-[#B69A64]/50 shadow-lg">
                     <img
-                      src="/images/consultant-placeholder.webp"
-                      alt={`Portrait placeholder of ${BUSINESS_INFO.owner.name}`}
-                      width={800}
-                      height={1000}
-                      className="w-full h-auto object-cover"
+                      src="/images/gobinda-kumar-mukherjee.webp"
+                      alt={`Portrait of ${BUSINESS_INFO.owner.name}, ${BUSINESS_INFO.owner.role} at Asirbad Consultancy`}
+                      width={576}
+                      height={1024}
+                      loading="lazy"
+                      className="w-full h-auto object-cover object-top"
                     />
                   </div>
                 </div>

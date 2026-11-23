@@ -8,7 +8,7 @@ export default function ConsultantPreview({ onNavigate }) {
     <section className="py-20 md:py-28 bg-[#FFFFFF] border-t border-[#E9E8E3] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-          {/* Left Column: Consultant Portrait Placeholder (5 cols) */}
+          {/* Left Column: Consultant Portrait (5 cols) */}
           <div className="lg:col-span-5">
             <div className="relative max-w-md mx-auto lg:max-w-none">
               {/* Outer Architectural Border */}
@@ -16,12 +16,12 @@ export default function ConsultantPreview({ onNavigate }) {
 
               <div className="relative rounded-xs overflow-hidden border border-[#B69A64]/50 shadow-xl bg-[#0B1D30]">
                 <img
-                  src="/images/consultant-placeholder.webp"
-                  alt={`Authentic portrait placeholder for consultant ${BUSINESS_INFO.owner.name}`}
-                  width={800}
-                  height={1000}
+                  src="/images/gobinda-kumar-mukherjee.webp"
+                  alt={`Portrait of ${BUSINESS_INFO.owner.name}, ${BUSINESS_INFO.owner.role} at Asirbad Consultancy`}
+                  width={576}
+                  height={1024}
                   loading="lazy"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover object-top"
                 />
 
                 {/* Bottom Authenticity Note */}

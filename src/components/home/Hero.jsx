@@ -71,44 +71,6 @@ export default function Hero({ onNavigate }) {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* 3 Section Quick Navigation Header Tabs (Located above image - Does not cover photo) */}
-      <div className="grid grid-cols-3 gap-2 mb-3">
-        {heroSlides.map((slide, idx) => {
-          const isActive = idx === currentSlide;
-          return (
-            <button
-              key={slide.id}
-              onClick={() => selectSlide(idx)}
-              className={`text-left py-2 px-3 rounded-xs transition-all duration-300 border cursor-pointer ${
-                isActive
-                  ? 'bg-[#142B45] border-[#B69A64] shadow-sm'
-                  : 'bg-[#0B1D30]/60 border-[#142B45] hover:border-[#B69A64]/40 hover:bg-[#0B1D30]'
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <span
-                  className={`text-[10px] font-mono tracking-wider font-semibold ${
-                    isActive ? 'text-[#DFC89B]' : 'text-[#E9E8E3]/50'
-                  }`}
-                >
-                  0{idx + 1}
-                </span>
-                {isActive && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#B69A64] animate-pulse" />
-                )}
-              </div>
-              <div
-                className={`text-xs font-serif font-semibold truncate mt-0.5 ${
-                  isActive ? 'text-[#F8F6F0]' : 'text-[#E9E8E3]/70'
-                }`}
-              >
-                {slide.tabTitle}
-              </div>
-            </button>
-          );
-        })}
-      </div>
-
       {/* Main Slider Display Area: Unobstructed Image View with Increased Height & Width */}
       <div className="relative w-full flex-1 min-h-[340px] sm:min-h-[400px] md:min-h-[440px] lg:min-h-[480px] xl:min-h-[520px] rounded-xs overflow-hidden border-2 border-[#B69A64]/60 shadow-[0_25px_60px_rgba(0,0,0,0.7)] bg-[#0B1D30] group">
         
@@ -119,9 +81,14 @@ export default function Hero({ onNavigate }) {
         <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#DFC89B] z-20 pointer-events-none" />
 
         {/* 3-Segment Hairline Progress Bar at Top Rim */}
-        <div className="absolute top-0 inset-x-0 z-30 flex h-0.5 bg-[#142B45]/80">
+        <div className="absolute top-0 inset-x-0 z-30 flex h-1 bg-[#142B45]/80">
           {heroSlides.map((_, dotIdx) => (
-            <div key={dotIdx} className="flex-1 relative overflow-hidden bg-white/10">
+            <button
+              key={dotIdx}
+              onClick={() => selectSlide(dotIdx)}
+              aria-label={`Jump to slide ${dotIdx + 1}`}
+              className="flex-1 relative overflow-hidden bg-white/10 hover:bg-white/20 transition-colors cursor-pointer h-full"
+            >
               {dotIdx === currentSlide ? (
                 <div
                   key={`progress-${progressKey}`}
@@ -135,7 +102,7 @@ export default function Hero({ onNavigate }) {
               ) : (
                 <div className="h-full w-0 bg-transparent" />
               )}
-            </div>
+            </button>
           ))}
         </div>
 

@@ -107,6 +107,15 @@ export default function Footer({ onNavigate }) {
               </li>
               <li>
                 <button
+                  onClick={(e) => handleNav("gallery", e)}
+                  className="text-[#E9E8E3]/80 hover:text-[#DFC89B] transition-colors flex items-center gap-2 group cursor-pointer"
+                >
+                  <span className="w-1.5 h-[1px] bg-[#B69A64] group-hover:w-3 transition-all"></span>
+                  Office Gallery
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={(e) => handleNav("contact", e)}
                   className="text-[#E9E8E3]/80 hover:text-[#DFC89B] transition-colors flex items-center gap-2 group cursor-pointer"
                 >

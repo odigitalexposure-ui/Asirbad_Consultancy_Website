@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Gallery from './pages/Gallery';
 
 export default function App() {
   // Normalize initial route from pathname or hash
@@ -17,6 +18,7 @@ export default function App() {
 
     if (target.includes('about')) return 'about';
     if (target.includes('service')) return 'services';
+    if (target.includes('gallery')) return 'gallery';
     if (target.includes('contact')) return 'contact';
     return 'home';
   };
@@ -30,6 +32,7 @@ export default function App() {
       home: 'Asirbad Consultancy | Taxation Consultancy in Sodepur, Kolkata',
       about: 'About Us | Asirbad Consultancy - Gobinda Kumar Mukherjee',
       services: 'Taxation & Consultancy Services | Asirbad Consultancy',
+      gallery: 'Office Gallery | Asirbad Consultancy - Sodepur, Kolkata',
       contact: 'Contact & Location | Asirbad Consultancy - Sodepur, Kolkata',
     };
 
@@ -90,6 +93,7 @@ export default function App() {
           onSelectService={handleSelectService}
         />
       )}
+      {currentPage === 'gallery' && <Gallery onNavigate={navigateTo} />}
       {currentPage === 'contact' && (
         <Contact
           onNavigate={navigateTo}

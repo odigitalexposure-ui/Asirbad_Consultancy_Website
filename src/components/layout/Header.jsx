@@ -23,6 +23,7 @@ export default function Header({ currentPage, onNavigate }) {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'services', label: 'Services' },
+    { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact' },
   ];
 
