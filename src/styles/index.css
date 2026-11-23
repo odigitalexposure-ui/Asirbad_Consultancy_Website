@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-navy: #142B45;
+  --color-deep-navy: #0B1D30;
+  --color-warm-ivory: #F8F6F0;
+  --color-pure-white: #FFFFFF;
+  --color-muted-gold: #B69A64;
+  --color-gold-hover: #9E824F;
+  --color-gold-light: #DFC89B;
+  --color-light-grey: #E9E8E3;
+  --color-body-text: #555F6B;
+  --color-border-subtle: #D8D6CE;
+
+  --font-serif: 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom editorial aesthetics & fine textures */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-body-text);
+    background-color: var(--color-warm-ivory);
+    /* Clearly perceptible bond paper & gold coordinate dot weave */
+    background-image: 
+      radial-gradient(rgba(182, 154, 100, 0.16) 1.25px, transparent 1.25px),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.055'/%3E%3C/svg%3E");
+    background-size: 28px 28px, 180px 180px;
+    background-repeat: repeat;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: var(--color-deep-navy);
+  }
+}
+
+/* Eye-Catching Deep Navy Executive Archival Texture with Visible Gold Lattice */
+.bg-executive-dark {
+  background-color: #0B1D30;
+  background-image: 
+    linear-gradient(135deg, rgba(20, 43, 69, 0.85) 0%, rgba(11, 29, 48, 0.98) 100%),
+    radial-gradient(rgba(223, 200, 155, 0.22) 1.5px, transparent 1.5px),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23B69A64' stroke-width='0.75' stroke-opacity='0.18'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, 32px 32px, 60px 60px;
+}
+
+/* Moving Banknote Guilloche Security Pattern for Light / Ivory Sections */
+.bg-financial-guilloche-light {
+  background-image: 
+    radial-gradient(rgba(182, 154, 100, 0.24) 1.5px, transparent 1.5px),
+    url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23B69A64' stroke-width='0.9'%3E%3Ccircle cx='60' cy='60' r='52' stroke-opacity='0.22'/%3E%3Ccircle cx='60' cy='60' r='38' stroke-opacity='0.18' stroke-dasharray='4 3'/%3E%3Ccircle cx='60' cy='60' r='24' stroke-opacity='0.16'/%3E%3Cpath d='M10 60 Q 35 25, 60 60 T 110 60' stroke-opacity='0.20'/%3E%3Cpath d='M10 60 Q 35 95, 60 60 T 110 60' stroke-opacity='0.20'/%3E%3Cpath d='M60 10 Q 25 35, 60 60 T 60 110' stroke-opacity='0.20'/%3E%3Cpath d='M60 10 Q 95 35, 60 60 T 60 110' stroke-opacity='0.20'/%3E%3Ccircle cx='60' cy='60' r='3.5' fill='%23B69A64' fill-opacity='0.30'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 32px 32px, 120px 120px;
+  animation: guillochePan 35s linear infinite;
+}
+
+/* Moving Accounting Double-Entry Ruled Ledger Grid Pattern */
+.bg-ledger-grid {
+  background-image: 
+    radial-gradient(rgba(182, 154, 100, 0.22) 1.5px, transparent 1.5px),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 80 L80 80 M40 0 L40 80' stroke='%23B69A64' stroke-width='0.8' stroke-opacity='0.18' fill='none'/%3E%3Cpath d='M36 40 H44 M40 36 V44' stroke='%23B69A64' stroke-width='1.2' stroke-opacity='0.32'/%3E%3C/svg%3E");
+  background-size: 28px 28px, 80px 80px;
+  animation: ledgerPan 30s linear infinite;
+}
+
+/* Dynamic Moving Architectural Grid for Dark Sections */
+.bg-financial-pattern-dark {
+  background-image: 
+    radial-gradient(rgba(223, 200, 155, 0.28) 1.5px, transparent 1.5px),
+    url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h48v48H0V0zm1 1h46v46H1V1z' fill='%23B69A64' fill-opacity='0.10'/%3E%3Ccircle cx='24' cy='24' r='1.5' fill='%23DFC89B' fill-opacity='0.30'/%3E%3C/svg%3E");
+  background-size: 32px 32px, 48px 48px;
+}
+
+/* Elegant gold hairline separator */
+.gold-hairline {
+  background: linear-gradient(90deg, rgba(182, 154, 100, 0) 0%, rgba(182, 154, 100, 0.9) 50%, rgba(182, 154, 100, 0) 100%);
+  height: 1px;
+}
+
+/* Subtle card top gold accent */
+.card-gold-accent {
+  position: relative;
+}
+.card-gold-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #B69A64 0%, #DFC89B 50%, #B69A64 100%);
+  opacity: 0.9;
+}
+
+/* ========================================================
+   Moving Ambient Textures & Visible Kinetic Keyframes
+   ======================================================== */
+@keyframes guillochePan {
+  0% {
+    background-position: 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 96px 96px, 120px 120px;
+  }
+}
+
+@keyframes ledgerPan {
+  0% {
+    background-position: 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 84px 84px, 80px 80px;
+  }
+}
+
+@keyframes watermarkRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wheelSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wheelSpinReverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-wheel-spin {
+  animation: wheelSpin 36s linear infinite;
+  will-change: transform;
+}
+
+.animate-wheel-spin-reverse {
+  animation: wheelSpinReverse 36s linear infinite;
+  will-change: transform;
+}
+
+@keyframes progressGrow {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes gridDrift {
+  0% {
+    background-position: 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 64px 64px, 144px 144px;
+  }
+}
+
+@keyframes ambientOrb1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(80px, -60px) scale(1.3);
+    opacity: 0.55;
+  }
+  66% {
+    transform: translate(-60px, 45px) scale(0.9);
+    opacity: 0.40;
+  }
+}
+
+@keyframes ambientOrb2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.42;
+  }
+  50% {
+    transform: translate(-100px, 70px) scale(1.35);
+    opacity: 0.58;
+  }
+}
+
+@keyframes waveShift {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-70px) scaleY(1.18);
+  }
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+}
+
+@keyframes waveCounterShift {
+  0% {
+    transform: translateX(-60px) scaleY(1.1);
+  }
+  50% {
+    transform: translateX(40px) scaleY(0.92);
+  }
+  100% {
+    transform: translateX(-60px) scaleY(1.1);
+  }
+}
+
+@keyframes floatParticleSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-35px) rotate(180deg) scale(1.3);
+    opacity: 1;
+  }
+}
+
+.animate-grid-drift {
+  animation: gridDrift 30s linear infinite;
+}
+
+.animate-ambient-orb1 {
+  animation: ambientOrb1 16s ease-in-out infinite;
+}
+
+.animate-ambient-orb2 {
+  animation: ambientOrb2 22s ease-in-out infinite alternate;
+}
+
+.animate-wave-drift {
+  animation: waveShift 24s ease-in-out infinite;
+}
+
+.animate-wave-counter {
+  animation: waveCounterShift 28s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatParticleSlow 7s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatParticleSlow 10s ease-in-out infinite 2s;
+}
+
+.animate-float-delayed2 {
+  animation: floatParticleSlow 13s ease-in-out infinite 4s;
+}
+
+.animate-watermark-spin {
+  animation: watermarkRotate 80s linear infinite;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

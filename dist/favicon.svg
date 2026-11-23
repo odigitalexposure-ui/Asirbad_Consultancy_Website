@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Deep Navy Rounded Base -->
+  <rect width="64" height="64" rx="14" fill="#0B1D30" />
+  
+  <!-- Subtle Inner Border in Muted Gold -->
+  <rect x="4" y="4" width="56" height="56" rx="10" stroke="#B69A64" stroke-width="1.5" stroke-opacity="0.8" fill="none" />
+  
+  <!-- Architectural Corner Accent Marks -->
+  <path d="M10 18V10H18" stroke="#B69A64" stroke-width="1.5" stroke-linecap="square"/>
+  <path d="M54 18V10H46" stroke="#B69A64" stroke-width="1.5" stroke-linecap="square"/>
+  <path d="M10 46V54H18" stroke="#B69A64" stroke-width="1.5" stroke-linecap="square"/>
+  <path d="M54 46V54H46" stroke="#B69A64" stroke-width="1.5" stroke-linecap="square"/>
+  
+  <!-- Central Serif Monogram: 'AC' -->
+  <text x="32" y="42" 
+        font-family="'Playfair Display', Georgia, serif" 
+        font-size="28" 
+        font-weight="700" 
+        letter-spacing="-0.5" 
+        fill="#F8F6F0" 
+        text-anchor="middle">AC</text>
+  
+  <!-- Small Center Gold Accent Dot -->
+  <circle cx="32" cy="49" r="1.5" fill="#B69A64" />
+</svg>
